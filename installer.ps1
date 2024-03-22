@@ -5,7 +5,6 @@ $apps = @(
     @{name = "Amazon.AWSCLI" },
     @{name = "c0re100.qBittorrent-Enhanced-Edition" },
     @{name = "clsid2.mpc-hc" },
-    @{name = "D4koon.WhatsappTray" },
     @{name = "dbeaver.dbeaver" },
     @{name = "Discord.Discord" },
     @{name = "Docker.DockerDesktop" },
@@ -26,6 +25,7 @@ $apps = @(
     @{name = "Terraform-docs.Terraform-docs" },
     @{name = "Valve.Steam" },
     @{name = "WhatsApp.WhatsApp" },
+    @{name = "D4koon.WhatsappTray" },
     @{name = "Zoom.Zoom" },
 );
 Foreach ($app in $apps) {
