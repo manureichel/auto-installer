@@ -8,6 +8,8 @@ This PowerShell script automates the installation of various applications on a W
 
 - The script starts with instructions to ensure that the Microsoft App Installer is installed on the system.
 
+- If running scripts is blocked (it should be), you can temporarily unblock them by running `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process`
+
 #### Application List
 
 - It defines a list of applications to install. Each application is represented as a hash table with a `name` key specifying the application identifier.
