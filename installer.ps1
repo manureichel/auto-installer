@@ -24,9 +24,7 @@ $apps = @(
     @{name = "Telegram.TelegramDesktop" },
     @{name = "Terraform-docs.Terraform-docs" },
     @{name = "Valve.Steam" },
-    @{name = "WhatsApp.WhatsApp" },
-    @{name = "D4koon.WhatsappTray" },
-    @{name = "Zoom.Zoom" },
+    @{name = "Zoom.Zoom" }
 );
 Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
