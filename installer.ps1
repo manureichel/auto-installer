@@ -2,29 +2,22 @@ Write-Output "Installing Apps"
 $apps = @(
     @{name = "7zip.7zip" },
     @{name = "Adobe.Acrobat.Reader.64-bit" },
-    @{name = "Amazon.AWSCLI" },
     @{name = "c0re100.qBittorrent-Enhanced-Edition" },
     @{name = "clsid2.mpc-hc" },
-    @{name = "dbeaver.dbeaver" },
     @{name = "Discord.Discord" },
     @{name = "Docker.DockerDesktop" },
     @{name = "EpicGames.EpicGamesLauncher" },
     @{name = "Git.Git" },
     @{name = "Google.Chrome" },
-    @{name = "Hashicorp.Terraform" },
     @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "Logitech.GHUB" },
     @{name = "Microsoft.PowerShell" },
     @{name = "Microsoft.VisualStudioCode" },
     @{name = "Microsoft.WindowsTerminal" },
-    @{name = "NickeManarin.ScreenToGif" },
-    @{name = "Notepad++.Notepad++" },
-    @{name = "OpenJS.NodeJS.LTS" },
-    @{name = "Python.Python.3.9" },
     @{name = "Telegram.TelegramDesktop" },
     @{name = "Terraform-docs.Terraform-docs" },
-    @{name = "Valve.Steam" },
-    @{name = "Zoom.Zoom" }
+    @{name = "Blizzard.BattleNet" },
+    @{name = "Valve.Steam" }
 );
 Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
