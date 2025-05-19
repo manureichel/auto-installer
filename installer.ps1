@@ -1,7 +1,6 @@
 Write-Output "Installing Apps"
 $apps = @(
     @{name = "7zip.7zip" },
-    @{name = "Adobe.Acrobat.Reader.64-bit" },
     @{name = "c0re100.qBittorrent-Enhanced-Edition" },
     @{name = "clsid2.mpc-hc" },
     @{name = "Discord.Discord" },
@@ -17,6 +16,7 @@ $apps = @(
     @{name = "Telegram.TelegramDesktop" },
     @{name = "Terraform-docs.Terraform-docs" },
     @{name = "Blizzard.BattleNet" },
+    @{name = "OpenJS.NodeJS" },
     @{name = "Valve.Steam" }
 );
 Foreach ($app in $apps) {
