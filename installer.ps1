@@ -1,4 +1,5 @@
 Write-Output "Installing Apps"
+echo Y | winget search Microsoft.WindowsTerminal > $null
 $apps = @(
     @{name = "7zip.7zip" },
     @{name = "c0re100.qBittorrent-Enhanced-Edition" },
