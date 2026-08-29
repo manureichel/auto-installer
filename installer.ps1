@@ -7,6 +7,7 @@ $apps = @(
     "clsid2.mpc-hc",
     "CurseForge.CurseForge",
     "Google.Chrome",
+    "Logitech.GHUB",
     "Nullsoft.Winamp",
     "Spotify.Spotify",
     "Surfshark.Surfshark",
