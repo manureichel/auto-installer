@@ -2,17 +2,23 @@ $ErrorActionPreference = 'SilentlyContinue'
 
 $apps = @(
     "7zip.7zip",
-    "Adobe.Acrobat.Reader.64-bit",
     "Blizzard.BattleNet",
-    "clsid2.mpc-hc",
-    "CurseForge.CurseForge",
-    "Google.Chrome",
-    "Nullsoft.Winamp",
-    "Spotify.Spotify",
-    "Surfshark.Surfshark",
-    "Valve.Steam",
     "c0re100.qBittorrent-Enhanced-Edition",
-    "WhatsApp.WhatsApp"
+    "clsid2.mpc-hc",
+    "Discord.Discord",
+    "Docker.DockerDesktop",
+    "EpicGames.EpicGamesLauncher",
+    "Git.Git",
+    "Google.Chrome",
+    "JanDeDobbeleer.OhMyPosh",
+    "Logitech.GHUB",
+    "Microsoft.PowerShell",
+    "Microsoft.VisualStudioCode",
+    "Microsoft.WindowsTerminal",
+    "OpenJS.NodeJS",
+    "Telegram.TelegramDesktop",
+    "Terraform-docs.Terraform-docs",
+    "Valve.Steam"
 )
 
 Write-Host "Iniciando instalación y verificación de aplicaciones..." -ForegroundColor Cyan

@@ -1,33 +1,70 @@
-### PowerShell Application Installer Script
+# Windows Auto Installer (winget)
 
-#### Overview
+A simple and automated PowerShell script to install your favorite applications on Windows using the **Windows Package Manager (`winget`)**.
 
-This PowerShell script automates the installation of various applications on a Windows system using the Windows Package Manager (`winget`). Here's a brief overview of its functionality:
+---
 
-#### Instructions
+## 🚀 Overview
 
-- The script starts with instructions to ensure that the Microsoft App Installer is installed on the system.
+This script checks a predefined list of application IDs against your system. For each application:
+- **If already installed**: It skips it and outputs a notification in green.
+- **If not installed**: It installs it automatically and silently in yellow, accepting all source and package agreements.
 
-- If running scripts is blocked (it should be), you can temporarily unblock them by running `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process`
+---
 
-#### Application List
+## 📋 Prerequisites
 
-- It defines a list of applications to install. Each application is represented as a hash table with a `name` key specifying the application identifier.
+1. **Windows 10 (version 1809 or later) or Windows 11**.
+2. **`winget` (Windows Package Manager)**: Pre-installed on modern Windows versions. If missing, install **App Installer** from the [Microsoft Store](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) or GitHub Releases.
 
-#### Installation Process
+---
 
-- The script iterates through the list of applications and checks if each application is already installed using the `winget list` command with the `--exact` flag. If an application is not installed, it proceeds to install it using the `winget install` command with various flags like `--accept-source-agreements` and `--accept-package-agreements` to automate the installation process.
+## 💻 How to Run
 
-#### Skip Installed Applications
+1. Open **PowerShell** (preferably as Administrator for applications requiring system-level permissions).
+2. If script execution is restricted on your system, allow script execution for the current session:
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+   ```
+   *(or `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`)*
+3. Navigate to the folder containing `installer.ps1` and run:
+   ```powershell
+   .\installer.ps1
+   ```
 
-- If an application is already installed, the script skips the installation process and prints a message indicating that the application is already installed.
+---
 
-#### Using `winget`
+## ⚙️ Customizing the Application List
 
-Here's a quick tutorial on using `winget`:
+You can customize the applications installed by editing the `$apps` array inside `installer.ps1`:
 
-1. **Installation**: `winget` comes pre-installed on new computers, but if you don't have it, just install the App Installer from the [Microsoft Store](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1).
+```powershell
+$apps = @(
+    "7zip.7zip",
+    "Google.Chrome",
+    "Microsoft.VisualStudioCode",
+    "Git.Git"
+)
+```
 
-2. **Listing Installed Apps**: Use `winget list` to see all applications you currently have installed and labels which ones are available through `winget`. This is a good way to prepare your own setup script, especially if you're planning to get a new computer.
+### Finding Application IDs with `winget`
 
-3. **Searching for Apps**: Use `winget search <name of app>` to find out if an app you want can be installed through `winget`. Alternatively, you can browse apps at [winget.run](https://winget.run/).
+- **Search for apps**:
+  ```powershell
+  winget search <app_name>
+  ```
+  *(e.g., `winget search vlc` or `winget search discord`)*
+- **Browse packages online**: Visit [winget.run](https://winget.run/) or [winstall.app](https://winstall.app/).
+- **List currently installed packages**:
+  ```powershell
+  winget list
+  ```
+
+---
+
+## 🛠️ How It Works
+
+- **Verification**: Uses `winget list --exact --id <PackageId> --accept-source-agreements` to accurately verify if the application is already on the machine.
+- **Automated Installation**: Runs `winget install --exact --id <PackageId> --silent --accept-source-agreements --accept-package-agreements` for unattended installation.
+- **Visual Feedback**: Provides clear, color-coded console messages (Cyan, Yellow, Green) for easy tracking.
+
