@@ -6,18 +6,12 @@ $apps = @(
     "c0re100.qBittorrent-Enhanced-Edition",
     "clsid2.mpc-hc",
     "Discord.Discord",
-    "Docker.DockerDesktop",
+    "Surfshark.Surfshark",
+    "CurseForge.CurseForge",
+    "Adobe.Acrobat.Reader.64-bit",
     "EpicGames.EpicGamesLauncher",
-    "Git.Git",
     "Google.Chrome",
-    "JanDeDobbeleer.OhMyPosh",
     "Logitech.GHUB",
-    "Microsoft.PowerShell",
-    "Microsoft.VisualStudioCode",
-    "Microsoft.WindowsTerminal",
-    "OpenJS.NodeJS",
-    "Telegram.TelegramDesktop",
-    "Terraform-docs.Terraform-docs",
     "Valve.Steam"
 )
 
